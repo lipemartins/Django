@@ -1,0 +1,15 @@
+{% if lista_ultima_pergunta %}
+    <ul>
+        {% for pergunta in lista_ultima_pergunta %}
+            <li>
+               <a href="{% url 'polls:detalhe' pergunta.id %}">{{pergunta.txt_pergunta}}</a>
+            </li>
+
+               Registrada em: {{pergunta.dt_pub}}
+        <p></p>
+
+        {% endfor %}
+    </ul>
+{% else %>
+    <p>Pesquisa nao encontrada!</p>
+{% endif %}
